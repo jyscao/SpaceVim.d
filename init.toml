@@ -22,17 +22,25 @@
     statusline_inactive_separator = "arrow"
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
-    enable_statusline_mode = false
+    enable_statusline_mode = true   ### Set by me: default is false
     relativenumber = false
 
 
-    # Set by me
+
+    ### Options Set by Me
+
     filemanager = "defx"    # use Shougo's defx to manage files
 
     search_tools = ['rg']   # only use rg for grepping (both Grepper & FlyGrep)
 
     bootstrap_before = "my_config#before"
     bootstrap_after = "my_config#after"
+
+    # install nerdfonts???
+    # https://github.com/ryanoasis/nerd-fonts
+
+    # default is true; see .SpaceVim/autoload/SpaceVim/plugins/projectmanager.vim for implementationg
+    project_rooter_automatically = false   # CtrlSpace can also manage CWD
 
 
 
@@ -49,22 +57,30 @@ default_height = 30
 
 
 
-## Added by Me
+### Layers Added by Me
+
+[[layers]]
+  name = "lang#lua"
+  lua_foldmethod = 'indent'
+  # lua_foldmethod = 'expr' ### needs foldexpr function's extreme slowness fixed before using
 
 [[layers]]
   name = "lang#python"
 
 [[layers]]
-  name = "lang#lua"
+  name = "lang#scheme"
 
 [[layers]]
-  name = "denite"
+  name = "lang#vim"
+
+# [[layers]]
+  # name = "denite"
 
 [[layers]]
   name = "git"
 
-# [[layers]]
-  # name = "github"
+[[layers]]
+  name = "github"
 
 [[layers]]
   name = "edit"
@@ -86,3 +102,6 @@ default_height = 30
 
 # [[layers]]
   # name = "ctrlspace"
+
+# [[layers]]
+  # name = "tmux"
