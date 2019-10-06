@@ -61,7 +61,7 @@ default_height = 30
 
 [[layers]]
   name = "lang#lua"
-  lua_foldmethod = 'indent'
+  foldmethod = "manual"
   # lua_foldmethod = 'expr' ### needs foldexpr function's extreme slowness fixed before using
 
 [[layers]]
@@ -69,6 +69,7 @@ default_height = 30
 
 [[layers]]
   name = "lang#scheme"
+  dialect = "guile"
 
 [[layers]]
   name = "lang#vim"
