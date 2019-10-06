@@ -11,7 +11,21 @@ let g:spacevim_custom_plugins = [
       \['tpope/vim-eunuch'],
       \['dahu/vimple'],
       \['AndrewRadev/linediff.vim'],
+      \['takac/vim-hardtime'],
       \]
+
+" Hardtime settings
+let g:hardtime_default_on = 1
+let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_disabled_keys = []
+let g:hardtime_timeout = 1000
+let g:hardtime_showmsg = 1
+" let g:hardtime_ignore_buffer_patterns = [ 'CustomPatt[ae]rn', 'NERD.*' ]
+" let g:hardtime_ignore_quickfix = 1
+let g:hardtime_allow_different_key = 1
+" let g:hardtime_maxcount = 2
 
 
 " Self-load CtrlSpace if not active/enabled (due to not being merged into SpaceVim)
