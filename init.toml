@@ -5,64 +5,73 @@
 # URL: https://spacevim.org
 # License: GPLv3
 #=============================================================================
-
 # All SpaceVim option below [option] section
 [options]
+
     # set spacevim theme. by default colorscheme layer is not loaded,
-    # if you want to use more colorscheme, please load the colorscheme
-    # layer
+    # if you want to use more colorscheme, please load the colorscheme layer
     colorscheme = "gruvbox"
     colorscheme_bg = "dark"
-    # Disable guicolors in basic mode, many terminal do not support 24bit
-    # true colors
+
+    # Disable guicolors in basic mode, many terminal do not support 24bit true colors
     enable_guicolors = true
-    # Disable statusline separator, if you want to use other value, please
-    # install nerd fonts
+
+    # Disable statusline separator, if you want to use other value, please install nerd fonts
     statusline_separator = "arrow"
     statusline_inactive_separator = "arrow"
+
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
-    enable_statusline_mode = true   ### Set by me: default is false
+    enable_statusline_mode = true   ### toggled by me: default is false
     relativenumber = false
 
+    # guifont = "SauceCodePro Nerd Font Mono:h11"     ### useless option setting for terminal mode
+    # Note: need to set Terminator font to not use system font &&
+    # NOTE: can use specific ones such as SauceCodePro, UbuntuMono, Hack, Inconsolata, etc.
 
+    # custom_plugins = [['tpope/vim-rhubarb'],['tpope/vim-eunuch'], ['dahu/vimple'], ['AndrewRadev/linediff.vim'],['takac/vim-hardtime']]
+    # TODO: can use `[[custom_plugins]]`
 
     ### Options Set by Me
-
+    window_smartclose = ""
     filemanager = "defx"    # use Shougo's defx to manage files
-
     search_tools = ['rg']   # only use rg for grepping (both Grepper & FlyGrep)
 
     bootstrap_before = "my_config#before"
     bootstrap_after = "my_config#after"
 
-    # install nerdfonts???
-    # https://github.com/ryanoasis/nerd-fonts
-
     # default is true; see .SpaceVim/autoload/SpaceVim/plugins/projectmanager.vim for implementationg
-    project_rooter_automatically = false   # CtrlSpace can also manage CWD
+    project_rooter_automatically = true   ### CtrlSpace can also manage CWD
+
+
 
 
 
 # Enable autocomplete layer
 [[layers]]
-name = 'autocomplete'
-auto-completion-return-key-behavior = "complete"
-auto-completion-tab-key-behavior = "smart"
+  name = 'autocomplete'
+  auto-completion-return-key-behavior = "complete"
+  auto-completion-tab-key-behavior = "smart"
 
 [[layers]]
-name = 'shell'
-default_position = 'top'
-default_height = 30
+  name = 'shell'
+  default_position = 'top'
+  default_height = 30
 
 
 
 ### Layers Added by Me
 
+# [[layers]]
+  # name = "lang#c"
+
 [[layers]]
   name = "lang#lua"
   foldmethod = "manual"
   # lua_foldmethod = 'expr' ### needs foldexpr function's extreme slowness fixed before using
+
+[[layers]]
+  name = "lang#markdown"
 
 [[layers]]
   name = "lang#python"
@@ -74,11 +83,21 @@ default_height = 30
 [[layers]]
   name = "lang#vim"
 
+[[layers]]
+  name = "fzf"
+
 # [[layers]]
-  # name = "denite"
+  # name = "format"
+
+# [[layers]]
+  # name = "indentmove"
+
+# [[layers]]
+  # name = "VersionControl"
 
 [[layers]]
   name = "git"
+  git-plugin = "fugitive"
 
 [[layers]]
   name = "github"
