@@ -11,6 +11,7 @@
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme layer
     colorscheme = "gruvbox"
+    # colorscheme = "nord"
     colorscheme_bg = "dark"
 
     # Disable guicolors in basic mode, many terminal do not support 24bit true colors
@@ -23,27 +24,25 @@
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_mode = true   ### toggled by me: default is false
-    relativenumber = false
+    relativenumber = true
 
     # guifont = "SauceCodePro Nerd Font Mono:h11"     ### useless option setting for terminal mode
     # Note: need to set Terminator font to not use system font &&
     # NOTE: can use specific ones such as SauceCodePro, UbuntuMono, Hack, Inconsolata, etc.
 
     # custom_plugins = [['tpope/vim-rhubarb'],['tpope/vim-eunuch'], ['dahu/vimple'], ['AndrewRadev/linediff.vim'],['takac/vim-hardtime']]
-    # TODO: can use `[[custom_plugins]]`
 
     ### Options Set by Me
     window_smartclose = ""
     filemanager = "defx"    # use Shougo's defx to manage files
     search_tools = ['rg']   # only use rg for grepping (both Grepper & FlyGrep)
+    windows_leader = ''     # remove top-level Window prefix 's' for time being, b/c of vim-sneak (& vim-surround?)
 
     bootstrap_before = "my_config#before"
     bootstrap_after = "my_config#after"
 
     # default is true; see .SpaceVim/autoload/SpaceVim/plugins/projectmanager.vim for implementationg
     project_rooter_automatically = true   ### CtrlSpace can also manage CWD
-
-
 
 
 
@@ -68,7 +67,7 @@
 [[layers]]
   name = "lang#lua"
   foldmethod = "manual"
-  # lua_foldmethod = 'expr' ### needs foldexpr function's extreme slowness fixed before using
+  # foldmethod = 'expr' ### needs foldexpr function's extreme slowness fixed before using
 
 [[layers]]
   name = "lang#markdown"
@@ -83,8 +82,8 @@
 [[layers]]
   name = "lang#vim"
 
-[[layers]]
-  name = "fzf"
+# [[layers]]
+  # name = "fzf"
 
 # [[layers]]
   # name = "format"
@@ -120,8 +119,16 @@
 [[layers]]
   name = "incsearch"
 
-# [[layers]]
-  # name = "ctrlspace"
+[[layers]]
+ name = "ctrlspace"
+ # home-mapping-key = "<C-p>"
+ # autosave-workspaces = true
+ # autoload-workspaces = false
+ # enable-spacevim-styled-keys = false
 
 # [[layers]]
   # name = "tmux"
+
+
+
+# TODO: can use `[[custom_plugins]]`

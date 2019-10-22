@@ -7,10 +7,13 @@
 
 """ let g:spacevim_disabled_plugins = []
 
+" BUG: All custom plugins no longer working?!
 let g:spacevim_custom_plugins = [
-      \['tpope/vim-rhubarb'],
       \['tpope/vim-eunuch'],
+      \['tpope/vim-rhubarb'],
+      \['lambdalisue/gina.vim'],
       \['dahu/vimple'],
+      \['justinmk/vim-sneak'],      
       \['AndrewRadev/linediff.vim'],
       \['takac/vim-hardtime'],
       \]
@@ -18,11 +21,21 @@ let g:spacevim_custom_plugins = [
 
 
 
-" Hardtime settings
+" Vim-Sneak settings
+let g:sneak#s_next = 1
+let g:sneak#absolute_dir = 1
+" let g:sneak#label = 1     " what is sneak-label-mode?
+" g:sneak#label_esc
+" map f <Plug>Sneak_s
+" map F <Plug>Sneak_S
+
+
+
+" Vim-Hardtime settings
 let g:hardtime_default_on = 1
 let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>",  "<BACKSPACE>", "<DELETE>"]
+let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>", "<DEL>"] ", '<Backspace>/<BS>'
 let g:list_of_disabled_keys = []
 let g:hardtime_timeout = 1000
 " let g:hardtime_showmsg = 1
