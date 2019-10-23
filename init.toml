@@ -82,8 +82,11 @@
 [[layers]]
   name = "lang#vim"
 
+[[layers]]
+  name = "fzf"
+
 # [[layers]]
-  # name = "fzf"
+  # name = "denite"
 
 # [[layers]]
   # name = "format"
