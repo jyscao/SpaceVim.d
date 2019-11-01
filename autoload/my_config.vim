@@ -12,11 +12,15 @@ let g:spacevim_custom_plugins = [
       \['tpope/vim-eunuch'],
       \['tpope/vim-rhubarb'],
       \['lambdalisue/gina.vim'],
+      \['jreybert/vimagit'],
       \['dahu/vimple'],
       \['justinmk/vim-sneak'],      
+      \['chaoren/vim-wordmotion'],
       \['AndrewRadev/linediff.vim'],
       \['takac/vim-hardtime'],
+      \['jyscao/vim-greprtpscr'],
       \]
+      " \['guns/vim-sexp']
       " \['tpope/vim-sexp-mappings-for-regular-people']
 
 
@@ -42,7 +46,7 @@ let g:hardtime_timeout = 1000
 " let g:hardtime_ignore_buffer_patterns = [ 'CustomPatt[ae]rn', 'NERD.*' ]
 let g:hardtime_ignore_quickfix = 1
 let g:hardtime_allow_different_key = 1
-let g:hardtime_maxcount = 3
+let g:hardtime_maxcount = 2
 """TODO: configure HardTimeOn for git, terminal, SpaceVim special buffers, etc.
 
 
@@ -50,16 +54,16 @@ let g:hardtime_maxcount = 3
 
 
 
-" Self-load CtrlSpace if not active/enabled (due to not being merged into SpaceVim)
-if !SpaceVim#layers#isLoaded('ctrlspace')
-  call add(g:spacevim_custom_plugins, ['vim-ctrlspace/vim-ctrlspace'])
-  " CtrlSpace default settings
-  let g:CtrlSpaceDefaultMappingKey = "<C-Space> "
-  let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
-  let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
-  let g:CtrlSpaceSaveWorkspaceOnExit = 1
-  let g:CtrlSpaceGlobCommand = 'rg --color=never --files'
-endif
+" " Self-load CtrlSpace if not active/enabled (due to not being merged into SpaceVim)
+" if !SpaceVim#layers#isLoaded('ctrlspace')
+"   call add(g:spacevim_custom_plugins, ['vim-ctrlspace/vim-ctrlspace'])
+"   " CtrlSpace default settings
+"   let g:CtrlSpaceDefaultMappingKey = "<C-Space> "
+"   let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
+"   let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
+"   let g:CtrlSpaceSaveWorkspaceOnExit = 1
+"   let g:CtrlSpaceGlobCommand = 'rg --color=never --files'
+" endif
 
 
 
@@ -80,6 +84,7 @@ function! my_config#after() abort
   set updatetime=500              " used by GitGutter as its update interval 
   set formatprg=par               " program used to reflow
   set showtabline=1               " only show tabline with >1 tabs
+  set guicursor+=a:blinkon0       " disable cursor blinking in all modes
   """ Terminal tweaks
   tnoremap jk <C-\><C-n>                            " allow jk to exit into normal mode
   autocmd TermOpen term://* startinsert             " enter terminal buffer in Insert instead of Normal mode
