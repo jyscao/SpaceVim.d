@@ -16,16 +16,19 @@ let g:spacevim_custom_plugins = [
       \['dahu/vimple'],
       \['justinmk/vim-sneak'],      
       \['chaoren/vim-wordmotion'],
+      \['terryma/vim-smooth-scroll'],
       \['AndrewRadev/linediff.vim'],
       \['takac/vim-hardtime'],
       \['jyscao/vim-greprtpscr'],
       \]
       " \['guns/vim-sexp']
       " \['tpope/vim-sexp-mappings-for-regular-people']
+      " \['sillybun/vim-repl']
+      " \['neovim/nvimdev.nvim']
 
 
 
-" Vim-Sneak settings
+" sneak.vim settings
 let g:sneak#s_next = 1
 let g:sneak#absolute_dir = 1
 " let g:sneak#label = 1     " what is sneak-label-mode?
@@ -35,7 +38,7 @@ let g:sneak#absolute_dir = 1
 
 
 
-" Vim-Hardtime settings
+" Hardtime settings
 let g:hardtime_default_on = 1
 let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
@@ -51,19 +54,11 @@ let g:hardtime_maxcount = 2
 
 
 
-
-
-
-" " Self-load CtrlSpace if not active/enabled (due to not being merged into SpaceVim)
-" if !SpaceVim#layers#isLoaded('ctrlspace')
-"   call add(g:spacevim_custom_plugins, ['vim-ctrlspace/vim-ctrlspace'])
-"   " CtrlSpace default settings
-"   let g:CtrlSpaceDefaultMappingKey = "<C-Space> "
-"   let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
-"   let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
-"   let g:CtrlSpaceSaveWorkspaceOnExit = 1
-"   let g:CtrlSpaceGlobCommand = 'rg --color=never --files'
-" endif
+" vim-smooth-scroll mappings
+noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 20, 2)<CR>
+noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
+noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
+noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 
 
 
@@ -75,12 +70,13 @@ let g:hardtime_maxcount = 2
 "NOTE: bootstrap functions <= does removing reference to this in init.toml stop custom_plugins from being sourced?
 
 function! my_config#before() abort
-  call SpaceVim#logger#info("bootstrap_before called")      " log bootstrap_before call
+  " TODO: add debug level logging for SpaceVim; then log using SpaceVim#logger#debug
+  call SpaceVim#logger#info("bootstrap_before called")
 endfunction
 
 function! my_config#after() abort
-  call SpaceVim#logger#info("bootstrap_after called")       " log bootstrap_after call
-  set inccommand=nosplit          " display result of incremental commands (ex. :%s/pat1/pat2/g)
+  call SpaceVim#logger#info("bootstrap_after called")
+  set inccommand=split            " display result of incremental commands (ex. :%s/pat1/pat2/g)
   set updatetime=500              " used by GitGutter as its update interval 
   set formatprg=par               " program used to reflow
   set showtabline=1               " only show tabline with >1 tabs

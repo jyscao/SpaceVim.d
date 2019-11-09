@@ -131,6 +131,7 @@
 
 # [[layers]]
   # name = "tmux"
+  # use: joshdick/dntw
 
 
 
