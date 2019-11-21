@@ -38,11 +38,12 @@
     search_tools = ['rg']   # only use rg for grepping (both Grepper & FlyGrep)
     windows_leader = ''     # remove top-level Window prefix 's' for time being, b/c of vim-sneak (& vim-surround?)
 
-    bootstrap_before = "my_config#before"
-    bootstrap_after = "my_config#after"
+    bootstrap_before = "config#before"
+    bootstrap_after = "config#after"
 
     # default is true; see .SpaceVim/autoload/SpaceVim/plugins/projectmanager.vim for implementationg
     project_rooter_automatically = true   ### CtrlSpace can also manage CWD
+    # disabled_plugins = ["vim-fugitive", ]
 
 
 
@@ -136,3 +137,4 @@
 
 
 # TODO: can use `[[custom_plugins]]`
+

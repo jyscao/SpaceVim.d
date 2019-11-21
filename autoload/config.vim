@@ -16,7 +16,7 @@ let g:spacevim_custom_plugins = [
       \['dahu/vimple'],
       \['justinmk/vim-sneak'],      
       \['chaoren/vim-wordmotion'],
-      \['terryma/vim-smooth-scroll'],
+      \['psliwka/vim-smoothie'],
       \['AndrewRadev/linediff.vim'],
       \['takac/vim-hardtime'],
       \['jyscao/vim-greprtpscr'],
@@ -24,7 +24,9 @@ let g:spacevim_custom_plugins = [
       " \['guns/vim-sexp']
       " \['tpope/vim-sexp-mappings-for-regular-people']
       " \['sillybun/vim-repl']
+      " \['norcalli/nvim-colorizer.lua']
       " \['neovim/nvimdev.nvim']
+      " \['terryma/vim-smooth-scroll'],
 
 
 
@@ -54,11 +56,18 @@ let g:hardtime_maxcount = 2
 
 
 
-" vim-smooth-scroll mappings
-noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 20, 2)<CR>
-noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
-noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
-noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
+" " vim-smooth-scroll mappings
+" noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 20, 2)<CR>
+" noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
+" noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
+" noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
+" let g:smoothie_base_speed = 15
+
+
+" let g:fzf_action = {
+  " \ 'ctrl-t': 'tab split',
+  " \ 'ctrl-x': 'split',
+  " \ 'ctrl-v': 'vsplit' }
 
 
 
