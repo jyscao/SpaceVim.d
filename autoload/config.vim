@@ -78,12 +78,12 @@ let g:hardtime_maxcount = 2
 "NOTE: does moving all commands from inside my_config#after outside still work???
 "NOTE: bootstrap functions <= does removing reference to this in init.toml stop custom_plugins from being sourced?
 
-function! my_config#before() abort
+function! config#before() abort
   " TODO: add debug level logging for SpaceVim; then log using SpaceVim#logger#debug
   call SpaceVim#logger#info("bootstrap_before called")
 endfunction
 
-function! my_config#after() abort
+function! config#after() abort
   call SpaceVim#logger#info("bootstrap_after called")
   set inccommand=split            " display result of incremental commands (ex. :%s/pat1/pat2/g)
   set updatetime=500              " used by GitGutter as its update interval 
