@@ -21,6 +21,8 @@ let g:spacevim_custom_plugins = [
       \['takac/vim-hardtime'],
       \['jyscao/vim-greprtpscr'],
       \]
+      " \['habamax/vim-evalvim'],
+      " \['plasticboy/vim-markdown']
       " \['guns/vim-sexp']
       " \['tpope/vim-sexp-mappings-for-regular-people']
       " \['sillybun/vim-repl']
@@ -90,6 +92,7 @@ function! config#after() abort
   set formatprg=par               " program used to reflow
   set showtabline=1               " only show tabline with >1 tabs
   set guicursor+=a:blinkon0       " disable cursor blinking in all modes
+  set showcmd
   """ Terminal tweaks
   tnoremap jk <C-\><C-n>                            " allow jk to exit into normal mode
   autocmd TermOpen term://* startinsert             " enter terminal buffer in Insert instead of Normal mode
