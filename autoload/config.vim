@@ -15,12 +15,14 @@ let g:spacevim_custom_plugins = [
       \['jreybert/vimagit'],
       \['dahu/vimple'],
       \['justinmk/vim-sneak'],      
-      \['chaoren/vim-wordmotion'],
       \['psliwka/vim-smoothie'],
       \['AndrewRadev/linediff.vim'],
       \['takac/vim-hardtime'],
       \['jyscao/vim-greprtpscr'],
       \]
+      " \['tommcdo/vim-exchange'],
+      " \['chaoren/vim-wordmotion'],
+      " \['dahu/vim-stack'],
       " \['habamax/vim-evalvim'],
       " \['plasticboy/vim-markdown']
       " \['guns/vim-sexp']
@@ -83,13 +85,14 @@ let g:hardtime_maxcount = 2
 function! config#before() abort
   " TODO: add debug level logging for SpaceVim; then log using SpaceVim#logger#debug
   call SpaceVim#logger#info("bootstrap_before called")
+  set <F11>=<C-v><F11>
 endfunction
 
 function! config#after() abort
   call SpaceVim#logger#info("bootstrap_after called")
   set inccommand=split            " display result of incremental commands (ex. :%s/pat1/pat2/g)
   set updatetime=500              " used by GitGutter as its update interval 
-  set formatprg=par               " program used to reflow
+  set formatprg=par\ -w78s0       " program used to reflow
   set showtabline=1               " only show tabline with >1 tabs
   set guicursor+=a:blinkon0       " disable cursor blinking in all modes
   set showcmd

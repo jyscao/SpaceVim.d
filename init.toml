@@ -37,6 +37,7 @@
     filemanager = "defx"    # use Shougo's defx to manage files
     search_tools = ['rg']   # only use rg for grepping (both Grepper & FlyGrep)
     windows_leader = ''     # remove top-level Window prefix 's' for time being, b/c of vim-sneak (& vim-surround?)
+    # plugin_manager = 'vim-plug'   # trying to use Vim-Plug breaks SpaceVim...
 
     bootstrap_before = "config#before"
     bootstrap_after = "config#after"
@@ -44,6 +45,8 @@
     # default is true; see .SpaceVim/autoload/SpaceVim/plugins/projectmanager.vim for implementationg
     project_rooter_automatically = true   ### CtrlSpace can also manage CWD
     # disabled_plugins = ["vim-fugitive", ]
+    
+    # enable_vimfiler_welcome = 0   # this disables showing the filemanager when executing just `$ nvim`
 
 
 
@@ -137,4 +140,13 @@
 
 
 # TODO: can use `[[custom_plugins]]`
+
+# [[layers]]
+#     name = "lang#r"
+#     repl_command = "R"
+
+
+
+
+
 
